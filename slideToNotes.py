@@ -25,11 +25,11 @@ for page_num in range(len(pdf.pages)):
     newPage.merge_translated_page(page, tx=0, ty= PaperSize.A4.height/2,expand=True)
 
     annotation = FreeText(
-        text=page_num,
-        rect=(50, 100, 200, 300),
+        text=page_num + 1,
+        rect=(PaperSize.A4.width/2 - 10, 0, PaperSize.A4.width/2 + 10, 25), # X of bottom left, Y of bottom left, X of top right, Y of top right
         font="Arial",
         bold=True,
-        font_size="14pt",
+        font_size="20pt",
     )
     annotation.flags = 4
     if page_num % 2 == 0:
